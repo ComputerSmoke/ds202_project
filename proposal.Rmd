@@ -1,0 +1,26 @@
+---
+title: "Final_Proposal_Addison_Schmidt"
+author: "Addison Schmidt"
+date: "11/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(ipumsr)
+```
+Team member: Addison Schmidt
+[Data source](https://highered.ipums.org/highered-action/variables/group)
+Overview:
+This dataset includes the educational and professional situation of college graduates, recent college graduates, and phD students. It ranges from 1993-2013, and includes data about people's job satisfaction and perceived security, in addition to statistics such as salary. It also includes infornmation about working part time, such as reason for working part time.
+```{r}
+ddi = read_ipums_ddi("./highered_00001.xml")
+data = read_ipums_micro(ddi, data_file = "highered_00001.dat")
+head(data)
+```
+
+
+Plan:
+The questions I am most interested in answering with this dataset invlove education and job satisfaction. I'm interested to see if there is a correlation between high education and feeling a job is important, or high salary and feeling a job is unimportant to society. I am also interested in comparing the salary and satisfaction of varying levels of education (undergrad - phD), and whether trends amongst recent graduates are also present in non-recent graduates.
